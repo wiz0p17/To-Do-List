@@ -1,0 +1,202 @@
+body{
+    background: #121212;
+
+
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid transparent;
+    width: 0;
+    animation: typing 2s steps(14) forwards;
+  }
+  
+  .cursor {
+    font-weight: bold;
+    animation: blink 0.8s infinite;
+    color: #00ffe7;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 14ch } /* adjust based on length of heading */
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 0 }
+    50% { opacity: 1 }
+  }
+  
+  
+
+#todo-input{
+    height: 40px;
+    border-radius: 7px;
+    outline: none;
+    padding-left: 10px;
+    font-size: 17px;
+    background-color: #f2f2f241;
+    border: none;
+    color: #fff;
+}
+
+#add-task-button{
+    height : 42px;
+    transition: 0.2s ease;
+    margin-left: 8px;
+    background: linear-gradient(90deg, #8e2de2, #4a00e0); /* Purple gradient */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#add-task-button:hover{
+    transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.9);
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+#add-task-button:active{
+    transform: scale(0.85);
+}
+
+.container{
+    min-width: 350px;
+    max-width: fit-content;
+    min-height: 200px;
+    max-height: fit-content;
+    background-color: #141414e9;
+    border-radius: 15px;
+    margin-top: 15%;
+}
+
+
+li{
+    min-height: 35px;
+    max-height: fit-content;
+    margin-top: 12px;
+    background-color: #f2f2f241;
+    display: flex;
+    align-items: center;
+    color: white;
+    border-radius: 7px;
+    margin-left: 22px;
+    font-size: 18px;
+    justify-content: space-between;
+    margin-right: 22px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+ul>li>button{
+    text-align: right;
+    border: none;
+    height: 25px;
+    font-size: 16px;
+    border-radius: 7px;
+    background-color: rgb(251, 6, 6);
+    color: white;
+    transition: 0.2s ease;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+ul>li>button:hover{
+    background-color: rgb(172, 9, 9);
+}
+
+ul>li>button:active{
+    transform: scale(0.85);
+}
+
+.completed{
+    text-decoration-line: line-through;
+    background-color: #f2f2f21a;
+    cursor: pointer;
+}
+
+
+.todo-container {
+    position: relative;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    background: #1f1f1f;
+    color: white;
+    overflow: hidden;
+    z-index: 0;
+    background: linear-gradient(135deg, #0fffc1, #3f78ff);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow:
+      0 8px 20px rgba(0, 0, 0, 0.4),
+      0 0 30px rgba(0, 255, 255, 0.2),
+      0 0 60px rgba(0, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      background: rgba(20, 20, 20, 0.35);
+      
+  }
+  
+  .todo-container::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ff00cc);
+    background-size: 300% 300%;
+    border-radius: 14px;
+    z-index: -1;
+    animation: animateBorder 5s linear infinite;
+    filter: blur(5px);
+  }
+  
+  @keyframes animateBorder {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+  .delete-btn {
+    background: linear-gradient(135deg, #ff4d4d, #ff0000);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.4);
+  }
+  
+  .delete-btn:hover {
+    transform: scale(1.02);
+    background: linear-gradient(135deg, #ff6b6b, #ff1a1a);
+    box-shadow: 0 0 4px 3px rgba(255, 0, 0, 0.6);
+  }
+  
+  
